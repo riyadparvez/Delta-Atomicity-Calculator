@@ -1,0 +1,4 @@
+./DeltaComputation "trace/192.168.133.101.log" "trace/192.168.133.102.log" "trace/192.168.133.103.log" "trace/192.168.133.104.log" "trace/192.168.133.105.log"
+
+
+./DeltaComputation "trace2/16.106.36.104.log" "trace2/16.106.36.105.log" "trace2/16.106.36.106.log" "trace2/16.106.36.107.log" "trace2/16.106.36.108.log" "trace2/16.106.36.109.log" "trace2/16.106.36.110.log" "trace2/16.106.36.111.log" "trace2/16.106.36.112.log" "trace2/16.106.36.113.log"
