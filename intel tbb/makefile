@@ -1,5 +1,5 @@
 OBJS = Zone.o InputProcessor.o Main.o
-CC = g++ -pipe
+CC = g++-4.8 -pipe
 DEBUG = -g
 CFLAGS = -Wall -O3 -std=c++11 -fopenmp -c $(DEBUG)
 LFLAGS = -Wall -fopenmp -lglog -ltbb -ltbbmalloc -ltbbmalloc_proxy -lrt $(DEBUG)
@@ -7,13 +7,13 @@ LFLAGS = -Wall -fopenmp -lglog -ltbb -ltbbmalloc -ltbbmalloc_proxy -lrt $(DEBUG)
 DeltaComputation: $(OBJS)
 	$(CC) $(OBJS) $(LFLAGS) -o DeltaComputation
 
-Zone.o : Zone.h Zone.cpp Score.h 
+Zone.o : Zone.hpp Zone.cpp Score.hpp 
 	$(CC) $(CFLAGS) Zone.cpp
 
-InputProcessor.o : InputProcessor.h InputProcessor.cpp Clusters.h Operation.h FileReader.h StringComparer.h 
+InputProcessor.o : InputProcessor.hpp InputProcessor.cpp Clusters.hpp Operation.hpp FileReader.hpp StringComparer.hpp 
 	$(CC) $(CFLAGS) InputProcessor.cpp
 
-Main.o : InputProcessor.h InputProcessor.cpp DefaultScoreComputer.h
+Main.o : InputProcessor.hpp InputProcessor.cpp DefaultScoreComputer.hpp
 	$(CC) $(CFLAGS) Main.cpp
 
 clean:
