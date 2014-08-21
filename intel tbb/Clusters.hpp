@@ -6,10 +6,10 @@
 #include <glog/logging.h>
 #include "tbb/concurrent_hash_map.h"
 #include "tbb/concurrent_vector.h"
-#include "Operation.h"
-#include "StringComparer.h"
-#include "Score.h"
-#include "Zone.h"
+#include "Operation.hpp"
+#include "StringComparer.hpp"
+#include "Score.hpp"
+#include "Zone.hpp"
 
 class Clusters
 {
