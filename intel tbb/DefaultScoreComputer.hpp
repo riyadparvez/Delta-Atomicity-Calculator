@@ -1,7 +1,7 @@
 #ifndef DEFAULT_SCORE_COMPUTER_H
 #define DEFAULT_SCORE_COMPUTER_H
 
-#include "Zone.h"
+#include "Zone.hpp"
 
 class DefaultScoreComputer : public Zone::ScoreComputer
 {
