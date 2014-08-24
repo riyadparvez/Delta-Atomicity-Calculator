@@ -1,4 +1,4 @@
-#include "InputProcessor.h"
+#include "InputProcessor.hpp"
 
 void InputProcessor::GetOperations(const tbb::concurrent_vector<std::string>& lines)
 {
