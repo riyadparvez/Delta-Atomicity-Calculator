@@ -6,8 +6,8 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 #include <unistd.h>
-#include "DefaultScoreComputer.h"
-#include "InputProcessor.h"
+#include "DefaultScoreComputer.hpp"
+#include "InputProcessor.hpp"
 
 void print_trace() 
 {
