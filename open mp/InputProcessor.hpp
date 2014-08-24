@@ -12,10 +12,10 @@
 #include <omp.h>
 #include <tbb/parallel_for.h>
 
-#include "Clusters.h"
-#include "FileReader.h"
-#include "Operation.h"
-#include "StringComparer.h"
+#include "Clusters.hpp"
+#include "FileReader.hpp"
+#include "Operation.hpp"
+#include "StringComparer.hpp"
 
 class InputProcessor
 {
