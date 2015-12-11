@@ -4,7 +4,7 @@
 #include <memory>
 #include <string>
 #include <glog/logging.h>
-#include "Score.h"
+#include "Score.hpp"
 
 class Zone
 {
