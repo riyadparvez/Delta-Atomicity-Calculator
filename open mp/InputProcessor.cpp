@@ -40,7 +40,7 @@ void InputProcessor::GetOperations(const tbb::concurrent_vector<std::string>& li
 		localClustersList.shrink_to_fit();
 	}
 }
-    
+
 void InputProcessor::GetAllOperations()
 {
 	tbb::concurrent_vector<tbb::concurrent_vector<std::string>> fileLines;
@@ -66,7 +66,7 @@ void InputProcessor::GetAllOperations()
 		{
 			for(size_t i = std::begin(r); i != std::end(r); ++i)
 			{
-				const tbb::concurrent_vector<std::string>& lines = fileLines[i];			
+				const tbb::concurrent_vector<std::string>& lines = fileLines[i];
 				GetOperations(lines);
 			}
 		}
@@ -84,7 +84,7 @@ void InputProcessor::ComputeScores()
 				clusters.ComputeZones();
  				clusters.SortZones();	
 				clusters.ComputeScores();
-			}		
+			}
 		}
 	);
 }
@@ -102,9 +102,9 @@ void InputProcessor::Print()
 void InputProcessor::Process()
 {
 	LOG(INFO)<<"Started process";
-	GetAllOperations();	
-	LOG(INFO)<<"Got all operations";	
+	GetAllOperations();
+	LOG(INFO)<<"Got all operations";
 	ComputeScores();
-		
-	Print();	
+
+	Print();
 }

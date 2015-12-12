@@ -27,5 +27,8 @@ before_install:
     - sudo apt-get install gcc-4.8 g++-4.8 libtbb-dev libgoogle-glog-dev
     - cd "intel tbb"
     - make
+    - cd ..
+    - cd "open mp"
+    - make
 script:
     

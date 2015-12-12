@@ -1,7 +1,7 @@
 #ifndef DEFAULT_SCORE_COMPUTER_H
 #define DEFAULT_SCORE_COMPUTER_H
 
-#include "Zone.h"
+#include "Zone.hpp"
 
 class DefaultScoreComputer : public Zone::ScoreComputer
 {
@@ -9,7 +9,7 @@ public:
     DefaultScoreComputer() : ScoreComputer()
     {}
     ~DefaultScoreComputer() {}
-    
+
     virtual Score ForwardForwardConflict(const Zone& zone_1, const Zone& zone_2)
 	{
 		//check whether both are forward zones and they conflict
@@ -28,10 +28,10 @@ public:
 				//return z.sa - z.fa;
 			}
 		}
-			
+
 		return Score(0, 0);
 	}
-	
+
     virtual Score ForwardBackwardConflict(const Zone& zone_1, const Zone& zone_2)
 	{
 		//  we assume this is F, and z is B and check for conflict
@@ -55,7 +55,7 @@ public:
 			return Score(zone_1.GetMaxStartTime() - zone_2.GetMinFinishTime(), 
 					(zone_1.GetMaxStartTime() + zone_2.GetMinFinishTime()) / 2);
 		}
-			
+
 		return Score (0, 0);
 	}
 private:

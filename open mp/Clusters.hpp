@@ -6,10 +6,11 @@
 #include <glog/logging.h>
 #include "tbb/concurrent_hash_map.h"
 #include "tbb/concurrent_vector.h"
-#include "Operation.h"
-#include "StringComparer.h"
-#include "Score.h"
-#include "Zone.h"
+
+#include "Operation.hpp"
+#include "StringComparer.hpp"
+#include "Score.hpp"
+#include "Zone.hpp"
 
 class Clusters
 {
@@ -26,7 +27,7 @@ public:
 	{
 		const Operation& operation = (*op);
 		tbb::concurrent_hash_map<std::string, tbb::concurrent_vector<std::shared_ptr<Operation>>, StringComparer>::accessor a;
-		
+
 		if(map.find(a, operation.GetValue()))
 		{
 		    a->second.push_back(op);
@@ -81,7 +82,7 @@ public:
 		            minFinishTime = operation.GetEndTime();
 		        }
 		    }
-		    
+
 		    z->SetMaxStartTime(maxStartTime);
 		    z->SetMinFinishTime(minFinishTime);
 		    if (minFinishTime < maxStartTime)
@@ -92,7 +93,7 @@ public:
 		    {
 		        z->SetType(Zone::Type::Backward);
 		    }
-		    
+
 		    z->SetReadCount(readCount);
 		    z->SetWriteCount(writeCount);
 		    z->SetFirstWriteStart(writeStart);

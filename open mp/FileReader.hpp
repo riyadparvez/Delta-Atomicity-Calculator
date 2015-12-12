@@ -3,7 +3,7 @@
 
 #include <boost/algorithm/string.hpp>
 #include <iostream>     // std::ios, std::istream, std::cout
-#include <fstream>  
+#include <fstream>
 #include <istream>
 #include <string>
 #include <vector>
