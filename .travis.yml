@@ -13,19 +13,6 @@ env:
 
 cache: apt
 before_install:
-    ###########################################################################
-    # Set up the locations to get various packages from
-    # We assume the Travis image uses Ubuntu 12.04 LTS
-    ###########################################################################
-    # Needed for CMake
-    - sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
-    # Needed for new libstdc++ and gcc4.8
-    - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test/
-    - sudo apt-get update
-    ###########################################################################
-    # Install stuff
-    ###########################################################################
-    - sudo apt-get install gcc-4.8 g++-4.8 libtbb-dev git automake autotools-dev
     - git clone https://github.com/google/glog.git
     - cd glog
     - ./configure && make && sudo make install
@@ -37,3 +24,13 @@ before_install:
     - make
 script:
     
+addons:
+    apt:
+        packages:
+            - automake
+            - gcc
+            - g++
+            - libtbb-dev
+            - git
+            - libgoogle-glog-dev
+              
