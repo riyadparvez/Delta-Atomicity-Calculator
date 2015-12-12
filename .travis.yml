@@ -1,0 +1,31 @@
+language: cpp
+compiler:
+    - gcc
+env:
+    ###########################################################################
+    # Configurations
+    #
+    # Each line in the "env" section represents a set of environment variables
+    # passed to a build. Thus each line represents a different build
+    # configuration.
+    ###########################################################################
+
+cache: apt
+before_install:
+    ###########################################################################
+    # Set up the locations to get various packages from
+    # We assume the Travis image uses Ubuntu 12.04 LTS
+    ###########################################################################
+    # Needed for CMake
+    - sudo add-apt-repository -y ppa:ubuntu-sdk-team/ppa
+    # Needed for new libstdc++ and gcc4.8
+    - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test/
+    - sudo apt-get update
+    ###########################################################################
+    # Install stuff
+    ###########################################################################
+    - sudo apt-get install gcc-4.8 g++-4.8 libtbb-dev
+    - cd "intel tbb"
+    - make
+script:
+    
