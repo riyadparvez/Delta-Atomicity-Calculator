@@ -26,7 +26,9 @@ before_install:
     ###########################################################################
     - sudo apt-get install gcc-4.8 g++-4.8 libtbb-dev git
     - git clone https://github.com/google/glog.git
+    - cd glog
     - ./configure && make && sudo make install
+    - cd ..
     - cd "intel tbb"
     - make
     - cd ..
