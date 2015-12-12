@@ -12,7 +12,7 @@ env:
     ###########################################################################
 
 cache: apt
-before_install:
+after_install:
     - git clone https://github.com/google/glog.git
     - cd glog
     - ./configure && make && make install
